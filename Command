@@ -1,0 +1,256 @@
+
+================Install magento2.4.1 =============================
+php bin/magento setup:install --base-url="http://local.246p2.com/" --db-host="localhost" --db-name="246p2" --db-user="root" --db-password="root@123" --admin-firstname="Vivek" --admin-lastname="Kumar" --admin-email="test@gmail.com" --admin-user="admin" --admin-password="admin123" --language="en_US" --currency="USD" --timezone="America/Chicago" --use-rewrites="1" --backend-frontname="admin" --elasticsearch-host=127.0.0.1 --elasticsearch-port=9200
+
+
+sudo composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.6
+
+bin/magento sampledata:deploy
+
+php bin/magento s:up && php bin/magento s:d:c && php bin/magento s:s:d -f && php bin/magento c:f && php bin/magento index:reindex && php bin/magento c:c 
+
+php8.1 bin/magento s:up && php8.1 bin/magento s:d:c && php8.1 bin/magento s:s:d -f && php8.1 bin/magento c:f && php8.1 bin/magento index:reindex && php8.1 bin/magento c:c 
+
+service varnish restart
+sudo if/no
+
+php bin/magento s:up && php bin/magento s:d:c && php bin/magento s:s:d -f && php bin/magento c:f && php bin/magento index:reindex && php bin/magento c:c 
+
+rm -rf generated/ && rm -rf var/view_preprocessed/ && rm -rf pub/static/adminhtml/ && rm -rf pub/static/frontend/ && php bin/magento c:f && php bin/magento s:up && php bin/magento s:d:c && php bin/magento s:s:d -f && php bin/magento c:f && php bin/magento index:reindex && php bin/magento c:c
+
+
+https://www.youtube.com/watch?v=MCr_jrRTffY
+
+newpassword
+
+service elasticsearch start
+sudo systemctl start elasticsearch
+sudo systemctl status elasticsearch
+curl -XGET 'http://localhost:9200'
+curl http://localhost:9200/_cluster/health?pretty
+
+
+
+/var/www/html/CI
+
+******* SHOW LIST OF php version *****************
+
+	sudo update-alternatives --list php
+
+******* SHOW LIST OF php version *****************
+
+******** switch php version *******************
+
+	sudo update-alternatives --set php /usr/bin/php7.2
+	php -i | grep "Loaded Configuration File"
+	sudo systemctl restart apache2
+	
+******** switch php version *******************
+
+sudo chmod -R 777 /var/www/html
+
+ URL?templatehints=magento  
+
+============ For DB backup ================
+
+	php bin/magento config:set system/backup/functionality_enabled 1 [ if not enable ]
+	php bin/magento setup:backup --db
+	
+============ For DB backup ================
+
+php bin/magento module:status
+php bin/magento module:enable --clear-static-content Bss_MultiStoreViewPricing
+
+
+Hatton_GoldCalculator
+
+git config list
+
+
+@9494130178@Aqt1990
+
+
+
+--------------Change of basket plus/minus -----
+
+app/design/frontend/Magento/JustApps/Mageants_OutofStockNotification
+app/design/frontend/Magento/JustApps/Magento_Catalog/templates/product/list.phtml
+app/design/frontend/Magento/JustApps/Magento_Catalog/web/js/catalog-add-to-cart.js
+app/design/frontend/Magento/JustApps/Magento_Checkout/web/js/view/minicart.js
+
+app/design/frontend/Magento/JustApps/Magento_Catalog/templates/product/list.phtml
+
+
+/home/partyhouseidevel/public_html/app/design/frontend/Magento/JustAppsMobile/Magento_Catalog/templates/product/list.phtml
+
+/home/partyhouseidevel/public_html/vendor/mageplaza/module-product-alerts/view/frontend/web/js/ajax-submit.js
+app/design/frontend/Magento/JustApps/Magento_Catalog/templates/product/list.phtml
+
+
+php bin/magento config:set dev/static/sign 1
+
+
+---------------------------------------
+
+
+https://staging.hatton-jewellers.com/9ct-yellow-gold-italian-rope-chain-28-68g-9mm-i141-29.html
+
+
+
+/*$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$helper = $objectManager->get('Mageplaza\ProductAlerts\Helper\Data');
+echo $notifymeHtml = $helper->getButtonHtml($_product);*/
+
+
+
+https://belvg.com/
+
+
+
+app/design/frontend/Hatton/m2-theme/Magento_Theme/templates/html/breadcrumbs.phtml
+app/design/frontend/Hatton/m2-theme/web/js/breadcrumb-read-more.js
+
+
+
+
+
+nexday---------
+
+/home/apex/public_html/app/code/Rvs/Advancedproduct/view/frontend/templates/advancedproduct_index_choose.phtml
+
+
+php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex && php bin/magento cache:flush
+
+&& php bin/magento indexer:reindex
+
+php73 bin/magento setup:upgrade
+php73 bin/magento setup:di:compile
+php73 bin/magento setup:static-content:deploy en_GB en_US -f
+php73 bin/magento cache:flush
+php73 bin/magento cache:clean
+php73 bin/magento indexer:reindex
+
+
+cp -r generated generated_bcp && rm -rf generated/* && php bin/magento se:di:co && cp -r pub/static pub/static_bcp && rm -rf pub/static/* var/view_preprocessed/* && php bin/magento se:st:de -f
+
+https://rvs-media.nifty.pm/NAgqG5uNu3oy/task/HTN-158
+https://rvs-media.nifty.pm/NAgqG5uNu3oy/task/HTN-161
+
+
+
+---------------Change in partyhouse-------------------------------
+
+/home/partyhouseidevel/public_html/vendor/magento/framework/Phrase/Renderer/MessageFormatter.php
+/home/partyhouseidevel/public_html/vendor/magento/framework/View/Asset/PreProcessor/FileNameResolver.php
+lib/web/jquery/bootstrap/collapse.js
+lib/web/jquery/bootstrap/tab.js
+
+
+----------- cahnge in hatton owl-----------
+app/code/Hatton/Slider/view/frontend/templates/widget/textslider.phtml
+
+app/design/frontend/Hatton/m2-theme/Meigee_Blacknwhite/templates/html/header.phtml [ changed]
+app/design/frontend/Hatton/m2-theme/web/css/blocks/_product-upsell.less
+app/code/Meigee/Blacknwhite/view/frontend/web/js/
+app/design/frontend/Hatton/m2-theme/web/js/product-upsell-owl-carousel.js
+
+
+-----------------------------------------------
+
+mysqldump -u admin -p partyhousenew > dump_partyhousenew_26JUNE.sql
+
+
+
+--------------GEMER change--------------
+
+[Wednesday 4:01 PM] Aquil Tanveer
+    Vivek Anand Kumar
+
+
+Justlor_MiniCart
+production/app/design/frontend/Magento/JustApps/Magento_Checkout/templates/cart/minicart.phtml
+
+/home/akhiltanveer/Documents/html/partyhouse/production/app/design/frontend/Magento/JustApps/Magento_Checkout/web/js/view/minicart.js
+
+
+/home/akhiltanveer/Documents/html/partyhouse/production/app/design/frontend/Magento/JustApps/Magento_Catalog/templates/product/list.phtml
+
+/home/akhiltanveer/Documents/html/partyhouse/production/app/design/frontend/Magento/JustApps/Magento_Checkout/templates/cart/item/renderer/actions/remove.phtml
+
+/home/akhiltanveer/Documents/html/partyhouse/production/app/design/frontend/Magento/JustApps/Magento_Checkout/templates/cart/minicart.phtml
+
+/home/akhiltanveer/Documents/html/partyhouse/production/app/design/frontend/Magento/JustApps/Magento_Checkout/web/js/view/minicart.js
+
+/home/akhiltanveer/Documents/html/partyhouse/production/app/design/frontend/Magento/JustApps/Magento_Checkout/web/js/sidebar.js
+
+<https://teams.microsoft.com/l/message/19:HtPDGKr7JAp2kl_Q-nOHqRP-WPMNJP0mS7q4nEXbe3c1@thread.tacv2/1692181906798?tenantId=de81d3f6-79a2-4e73-affe-368580c474bb&amp;groupId=7c8558a6-57e6-4c84-8dce-b9ac81ad11bf&amp;parentMessageId=1692181906798&amp;teamName=Magento Team&amp;channelName=General&amp;createdTime=1692181906798&amp;allowXTenantAccess=false>
+
+
+
+
+------ primeloop carousel change -----------------------
+
+app/design/frontend/PrimeLoops/default/Magento_Catalog/templates/product/image_with_borders.phtml
+app/design/frontend/PrimeLoops/default/web/js/nav.js
+
+
+
+magento 2 Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`primeloopm16Aug`.`catalog_product_website`, CONSTRAINT `CAT_PRD_WS_PRD_ID_SEQUENCE_PRD_SEQUENCE_VAL` FOREIGN KEY (`product_id`)
+
+
+https://projects.rvsmedia.com/4vyFEkhfQaAXRs/task/PRW-46
+Product Page Tag Links Don't Work
+---- Have to create a category/ Amasty >> imporoved layeard navigation >> All product
+
+https://projects.rvsmedia.com/4vyFEkhfQaAXRs/task/PRW-46
+'Sort By' Not working on any pages 
+app/design/frontend/PrimeLoops/default/Magento_Catalog/web/js/product/list/toolbar.js
+
+https://projects.rvsmedia.com/4vyFEkhfQaAXRs/task/PRW-46
+Expired Downloads
+/home/primeloop/www/pub/media/downloadable/files/links/f/i/file_example_mp3_700kb.mp3
+/home/primeloop/www/pub/media/downloadable/files/samples/f/i/file_example_mp3_700kb.mp3
+/home/primeloop/www/pub/media/downloadable/files/link_samples/f/i/file_example_mp3_700kb.mp3
+
+
+https://projects.rvsmedia.com/4vyFEkhfQaAXRs/task/PRW-65
+Audio Player Not functioning properly
+
+
+
+
+find /home/primeloop/www/pub/media -type f -iname omega011_omega_bundle_1-5_999727.*
+
+
+
+
+
+
+lib/web/tiny_mce_4/plugins/media/plugin.min.js
+waveformGenerator
+
+
+-------- 
+php bin/magento config:set dev/grid/async_indexing 0
+
+---- expire download
+table = downloadable_link_purchased_item
+
+
+
+
+
+
+
+
+
+
+{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Prime Loops" show_pager="0" products_count="16" template="Iweb_Cms::product/widget/content/grid-slider.phtml" cache_lifetime="43200" type_id="exclusive" conditions_encoded="^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`any`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`label`,`operator`:`()`,`value`:[`298,396`]^]^]"}}
+
+{{widget type="Magento\CatalogWidget\Block\Product\ProductsList" title="Test" show_pager="0" products_count="16" template="Iweb_Cms::product/widget/content/grid-slider.phtml" conditions_encoded="^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`417`^]^]"}}
+
+
+
+
+
+

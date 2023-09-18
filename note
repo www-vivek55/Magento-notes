@@ -1,0 +1,479 @@
+
+  ***  Theme setup command line ***
+
+   php -f bin/magento config:set web/secure/base_static_url http://localhost/bs_outstock_theme/pub/static/
+   php -f bin/magento config:set web/unsecure/base_static_url http://localhost/bs_outstock_theme/pub/static/
+   php -f bin/magento config:set web/unsecure/base_media_url http://localhost/bs_outstock_theme/pub/media/
+   php -f bin/magento config:set web/secure/base_media_url http://localhost/bs_outstock_theme/pub/media/
+
+=> Class 'IntlDateFormatter' not found 
+
+   sudo apt-get install php7.3-intl
+   sudo apt-get install php7.3-soap
+
+====================================================
+ =>  PHP Version Change Command Line
+
+     sudo update-alternatives --list php
+     - php -v 
+     - sudo a2dismod php7.4
+     - sudo a2enmod php7.2
+     - sudo service apache2 restart
+     - sudo update-alternatives --set php /usr/bin/php7.2
+     
+     - sudo update-alternatives --config php
+
+     sudo a2dismod php7.4 && sudo a2enmod php8.2 && service apache2 restart sudo update-alternatives --set php /usr/bin/php8.2
+
+     -----  apt install libapache2-mod-php7.3
+     ----- ll /usr/lib/apache2/modules/libphp7.4.so
+
+========================================================================
+=> Elasticsear Command line
+
+      - service elasticsearch status     (failed)
+      - service elasticsearch start      (active)
+      - sudo systemctl enable elasticsearch
+
+      - php bin/magento module:disable {Magento_Elasticsearch,Magento_InventoryElasticsearch,Magento_Elasticsearch6,Magento_Elasticsearch7} 
+
+======================================================================
+=>Composer
+       
+       - composer --version
+       - sudo apt install composer
+       - composer require mailchimp/mc-magento2:2.3.4
+       - composer self-update 1.10.17
+       - composer self-update --rollback
+
+
+=========================================================
+
+=>Imagick install
+      apt-get install php7.4-imagick    
+
+=======================================================================
+=> mahento 2.4 install command line
+
+   php -dmemory_limit=1G bin/magento setup:install --base-url=http://127.0.0.1/abigail/ --db-host=192.168.0.249 --db-name=dnb658_new --db-user=bhavika --db-password=cQgvUYUbVn8TyZ3y --admin-firstname=Bhavika --admin-lastname=Lodariya --admin-email=bhavika.lodariya@designnbuy.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200
+
+
+   php -dmemory_limit=1G bin/magento setup:install --base-url=http://local.246.com/ --db-host=localhost --db-name=246p1 --db-user=root --db-password=root@123 --admin-firstname=vivek --admin-lastname=kumar --admin-email=194vivek@gmail.com --admin-user=admin --admin-password=admin@123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200
+
+==========================================================================================================================================
+ => menu bar top to Bottom command line
+    gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+==================================================
+ => cache flush command :
+    php bin/magento cache:flush
+
+    php bin/magento setup:di:compile
+
+====================================
+ => cache clean command :
+    php bin/magento cache:clean
+
+=====================================
+ => indexer reindex command :
+    php bin/magento indexer:reindex
+
+=============================================    
+=>module status command:
+  php bin/magento module:status mageplaza_smtp(module name)
+
+==============================================================
+=> module enable/disable command:
+     php bin/magento module:enable (module name)
+     php bin/magento module:disable(module name)
+ ==========================================================
+  => extension install command :
+
+        php bin/magento setup:upgrade
+
+        php bin/magento setup:static-content:deploy -f 
+
+        php -dmemory_limit=2G bin/magento setup:static-content:deploy -f
+
+ ===========================================================      
+ => developer mode command :
+     php bin/magento deploy:mode:set developer
+
+============================================
+=>production mode:
+
+     php bin/magento deploy:mode:show
+     php bin/magento deploy:mode:set production
+     php bin/magento deploy:mode:set production --skip-compilation
+     php bin/magento maintenance:disable
+=================================================
+=> image 
+    php bin/magento catalog:image:resize
+===================================================
+=>Cron
+    php bin/magento cron:run
+
+================================================
+ => permission command :
+    sudo chmod -R 777 var/ pub/ generated/ 
+
+ ===============================   
+ => server restart command : 
+       sudo service apache2 restart
+=====================================
+ => file/folder delete command :
+       rm -rf file/folder name     
+
+======================================
+=> Maintenance
+     php bin/magento maintenance:enable
+     php bin/magento maintenance:disable
+     php bin/magento maintenance:status 
+ ============================================
+  => Git ni key command 
+  
+     ssh-keygen -t rsa
+      cat /home/dnb605/.ssh/id_rsa.pub
+     
+=========================================
+db import command line:
+   mysql -u root -p aiod334m231 < allinonedesigner.sql
+
+===============================================================
+=> admin password reset :
+    php bin/magento admin:user:create --admin-user=admin2 --admin-password=admin@123
+
+    php bin/magento admin:user:create --admin-user=vivek --admin-password=vivek@55 --admin-email=VivekAnand@rvsmedia.com --admin-firstname=Vivek --admin-lastname=Admin
+
+    VivekAnand@rvsmedia.com
+
+    sudo php bin/magento admin:user:create   
+
+   UPDATE admin_user SET password = CONCAT(SHA2('asdfghjkadmin@123', 256), ':asdfghjk:1') WHERE username = 'admin';
+   
+================================
+ found file :
+  grep -rl "xyz" *
+  grep -r "scrollPosition" /var/www/staging.hatton-jewellers.com/public > /var/www/staging.hatton-jewellers.com/public/var/log/custom11.log
+  
+======================================================================================   
+ => zip command :
+
+     =>   zip banava no command :
+        zip -r source.zip .
+
+     => unzip no command:
+       unzip (zipname)
+     
+   cpanel ma source add command line : wget -c http://dnb605.designnbuy.tech/source.zip
+
+===============================================================
+ => 84 server : http://192.168.0.84/padmin/index.php :
+
+  host : 192.168.0.84
+  username : dnb
+  password : nzjFXs4ETPAjyKmF   
+
+ db import command : mysql -h 192.168.0.84 -u dnb -p dbname < aiod_soho.sql (file name)
+
+ database export : mysqldump -u root -p tony > dnb657.sql(zip name)
+
+ ----- Export the database--------
+     
+    mysql -u root -p [ After click enter put the db password ]
+    show databases;
+    use partyhouseidevel_staging;
+    SET autocommit=0; source /home/vivek/Downloads/partyhouseidevel_staging_1.sql;
+    mysqldump partyhouseidevel_staging > partyhouseidevel_staging_27june.sql --no-tablespaces
+    
+    mysqldump beAChaF04Dbq > beAChaF04Dbq_13july.sql --no-tablespaces
+
+    mysqldump -u partyhouseidevel_staging -p partyhouseidevel_staging > june-partyhouseidevel_staging-backup.sql
+    
+    mysqldump -u beAChaF04Dbq -p beAChaF04Dbq > beAChaF04Dbq-13-jullybackup.sql --no-tablespaces
+
+
+    --no-tablespaces
+
+----------- Copy file one server to other server -----------
+
+1.First connect to server and go to path where you form copy
+
+scp VIVEK.txt partyhouseidevel@159.69.123.194:/home/partyhouseidevel/public_html
+scp media_bkp.zip partyhouse@188.166.145.173:/home/partyhouse/www/pub
+
+scp partyhouse@134.122.100.16:/var/www/html/partyhouse/pub/media.zip /home/vivek/Downloads
+
+scp -p index.php bachcafe.com@193.39.254.108:/var/www/vhosts/beachcafe.com/htdocs
+
+scp -r bachcafe.com@193.39.254.108:/var/www/vhosts/beachcafe.com/htdocs/index.php /home/vivek/Downloads
+
+scp -q /home/vivek/Downloads bachcafe.com@193.39.254.108:/var/www/vhosts/beachcafe.com/htdocs/index.php
+
+
+-------- Download large file from server to local --------------------------
+
+scp partyhouse@134.122.100.16:/var/www/html/partyhouse/vendor_10july.zip /var/www/html/PartyhouseLive
+
+mysql -u admin -p partyhousenew < allinonedesigner_10july.sql
+
+mysql -h 134.122.100.16 -u admin -p partyhousenew < aiod_soho_10july.sql --no-tablespaces (file name)
+
+mysqldump -p -u admin partyhousenew > dbname_10july.sql
+
+mysql -u admin -p -D partyhousenew < tableName_10july.sql
+
+
+------------ varnish ---------------------------------------
+sudo systemctl stop varnish.service
+sudo systemctl start varnish.service
+sudo systemctl enable varnish.service
+sudo systemctl status varnish.service
+
+-------------------------------------------------------------
+
+
+ ================================================================================================
+  => git ma projact setup karva mate :
+
+    1. aiod ni branch levi (ankur and guruji) /zip download 
+    2. git clone git@192.168.0.222:dnb/dnb605.git (project url) (parth : var/www/html)
+    3. 84 db import karva no
+    4. git status
+    [ While git status not showing any file/folder add like this : git add /var/www/html/JS_LIVE/captain_magento2/lib/internal -f ]
+    5. git add . 
+    6. git commit -m "commit after internal QA"
+    7. git push [ git push origin feature/CN-408 ] 
+    
+     git remote -v
+    git checkout separate_module
+
+    --- ADD key----
+    cd ~/.ssh
+    ssh-keygen -t rsa -b 4096 -C "194vivek@gmail.com"
+    eval $(ssh-agent -s)
+    ssh-add
+
+
+   ----------------------------------------------------------------------- 
+
+=>  git permissions command :
+          1. git config core.fileMode false
+          2. git config core.ignorecase false 
+       
+ 
+========================================================================================================
+  =>   UAT live ma setup karva mate
+
+      1. UAT ssh command : ssh dnb670@173.212.243.133  : pwd : -SF0Xo;x{1M9
+      2. git clone ssh://git@202.131.106.134:2222/dnb/dnb605.git
+
+--------------------------------------------------------------------------
+ => UAT database link : 
+
+    http://adarsha.mobicommerce.net/padmin/index.php
+    https://173.212.243.133/padmin/index.php
+    DB user: dnb_product
+    Db pwd: nzjFXs4ETPAjyKmF
+
+database import : mysql -u dnb_product -p dnb605(db name) < allinonedesigner.sql (file name)
+
+database import : mysql -u dnb_product -p dnb605(db name) < allinonedesigner.sql (file name)
+
+---------------------------------------------------------------------------------------------------
+=> UAT cache:flush command :
+
+     /usr/local/bin/php bin/magento cache:flush^C
+     /opt/cpanel/ea-php71/root/usr/bin/php bin/magento cache:flush
+
+============================================================================================
+ => [3] grunt install no command :
+        sudo npm install -g grunt-cli
+
+=>  [1]  nmp install command :
+        sudo apt-get install npm 
+ 
+=>  [2] node js command :
+       1. curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+       2. sudo apt install nodejs
+       3.sudo apt install nodejs-legacy
+       4.node --version
+
+===========================================================================
+=> Saas setup in live
+
+     saas ssh connect : ssh -i DNB_Rackspace_Pvt.pem adam_middleton@146.20.78.92 -p2281    
+
+--------------------------------------------------------------------------------------------
+=> Saas Database Url : 
+
+        - http://146.20.78.92:8080/phpMyAdmin/
+
+
+-------------------------------------------------------------------------------------------
+=> Saas batabase import :
+    
+      - mysql -u root -p nextdayspex < /home/apex/public_html/apexlive-aug.sql;
+
+ 
+-----------------------------------------------------------------------------
+=> Cache flush:
+        /opt/rh/rh-php72/root/usr/bin/php bin/magento cache:flush 
+
+        /opt/rh/rh-php72/root/usr/bin/php bin/magento setup:upgrade 
+
+        /opt/rh/rh-php72/root/usr/bin/php bin/magento setup:static-content:deploy -f
+
+        /opt/rh/rh-php72/root/usr/bin/php -dmemory_limit=1G bin/magento setup:static-content:deploy -f
+
+        /opt/rh/rh-php71/root/usr/bin/php -dmemory_limit=2G bin/magento setup:static-content:deploy it_IT -f
+      
+       /opt/rh/rh-php71/root/usr/bin/php -dmemory_limit=2G bin/magento setup:upgrade
+
+       /opt/rh/rh-php71/root/usr/bin/php bin/magento setup:upgrade  
+       
+       /opt/rh/rh-php71/root/usr/bin/php bin/magento cache:flush
+
+       /opt/rh/rh-php71/root/usr/bin/php -dmemory_limit=2G bin/magento indexer:reindex
+
+=========================================================================
+
+ssh -i DNB_Rackspace_Pvt.pem ivana_senicic@146.20.78.92 -p2281
+
+
+ssh -i DNB_Rackspace_Pvt.ppk.pem lazarus_gomes@146.20.78.92 -p2281
+
+
+=========================================================================
+
+http://192.168.0.247/dnb/allinone_resources/blob/master/AIOW2P%204.0/AIOW2P%204.0%20Installation%20Guide%20-%20turnkey.pdf
+
+===============================================================================
+
+
+
+http://127.0.0.1/carlos/dnb/minify/index.php?type=both
+
+
+
+
+
+
+ini_set('error_reporting', E_ERROR);
+register_shutdown_function("fatal_handler");
+function fatal_handler() {
+    $error = error_get_last();
+    echo("<pre>");
+    print_r($error);
+}
+
+
+
+AIOD 4.0 Url : 
+
+    https://testaiod4.designnbuy.live/
+    https://testaiod4.designnbuy.live/admin
+    
+        user : admin
+        password : zX5]9yN9\PFMN.uQ
+
+
+
+
+
+
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$product = $objectManager->create('Magento\Catalog\Model\Product')->load($product_id);
+
+
+php bin/magento config:set sales_email/general/async_sending 0
+
+
+
+$writer = new \Zend_Log_Writer_Stream(BP . '/var/log/ORDERTEST.log');
+        $logger = new \Zend_Log();
+        $logger->addWriter($writer);
+        $logger->info('test');
+
+
+
+sudo chmod -R 777 var/*  pub/* generated/*
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -f
+php bin/magento c:f
+php bin/magento c:c
+php bin/magento indexer:reindex
+sudo chmod -R 777 var/*  pub/* generated/*
+
+
+         
+pkill -f filezilla 
+ls -lt
+ls -ltr
+
+
+/home/apex/public_html/app/design/frontend/Optomansi/default/Smart_FreeShippingBanner/templates/checkout
+
+
+
+git@github.com:RVSMEDIA/partyhouse.git
+git remote add origin https://github.com/RVSMEDIA/partyhouse.git
+git remote add origin https://github.com/RVSMEDIA/beachcafe.git
+
+git config --global user.name "aquil tanveer"
+git config --global user.email "aquil.tanveer@rvsmedia.com"
+
+aquil.tanveer@rvsmedia.com
+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
+git pull origin staging
+
+
+
+php bin/magento config:set dev/static/sign 1
+
+
+----------- backup the sql file ---------------
+
+mysqldump -u partyhouseidevel_staging -p partyhouseidevel_staging > june16-2023-partyhousestagging.sql --no-tablespaces
+
+
+mysqldump -u partyhouseidevel_staging -p'IrV)J]p$kbwv' partyhouseidevel_staging > JUNE16-2023-partyhousestagging.sql --no-tablespaces
+
+
+mysqldump -u partyhouseidevel_staging -p partyhouseidevel_staging > june16-2023-partyhousestagging.sql --no-tablespaces
+
+----------- backup the sql file ---------------
+
+------ Extract tar file ------------------------------
+tar -xvzf community_images.tar.gz // extract tar file
+
+-------- Resize the video ------------------------------
+
+sudo apt install ffmpeg
+ffmpeg -i partyhouse-plus-minu.webm -fs 7M partyhouse-plus-minu1.webm //Resize the video file
+ffmpeg -i partyhouse-plus-minu1.webm -c copy output.mp4 //convert the video format
+
+--------------------------------------------------------
+
+
+
+
+<script src="https://cdn.by.wonderpush.com/sdk/1.1/wonderpush-loader.min.js" async></script>
+<script>
+window.WonderPush = window.WonderPush || [];
+WonderPush.push(["init", {
+    webKey: "c9d9a6ac4aa501f3b50f7aa3a8ad027dece2efa37419d813248dc2fc5424423d",
+}]);
+</script>
+<script>!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=atob("aHR0cHM6Ly9zdGF0aWMub2xhcmsub3JnL2FwcC9tYWluLmpz");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6XW0QWRPED"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6XW0QWRPED');
+</script>

@@ -1,0 +1,199 @@
+vivekanand.kumar@designnbuy.com
+
+========== Permission Command ===================
+    sudo chmod -R 777 var/ pub/ generated/ 
+
+=============== Elasticsearch =====================
+    sudo systemctl start elasticsearch.service
+    sudo systemctl stop elasticsearch.service
+    sudo systemctl status elasticsearch.service
+
+    sudo service elasticsearch start
+    sudo service elasticsearch stop
+    sudo service elasticsearch restart
+
+
+=============== Install magento 2.4 =====================
+php -dmemory_limit=1G bin/magento setup:install --base-url=http://local.243.com/ --db-host=127.0.0.1 --db-name=243 --db-user=root --db-password=root@123 --admin-firstname=vivek --admin-lastname=kumar --admin-email=194vivek@gmail.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --search-engine=elasticsearch7 --elasticsearch-host=localhost --elasticsearch-port=9200
+
+===================== Command Line ==================================
+
+    php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex &&  php bin/magento cache:flush
+
+================ Set mode of project ====================
+    php bin/magento deploy:mode:set developer
+
+=============== Alis set =============================
+
+    alias cc='php bin/magento cache:clean'
+    alias cf='php bin/magento cache:flush'
+    alias su='php bin/magento setup:upgrade'
+    alias sdc='php bin/magento setup:di:compile'
+    alias sscd='php bin/magento setup:static-content:deploy -f'
+    alias ir='php bin/magento indexer:reindex'
+    alias pp='sudo chmod -R 777 var/ pub/ generated/'
+    alias all='php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex &&  php bin/magento cache:flush'
+    alias all-c='php bin/magento setup:upgrade && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex &&  php bin/magento cache:clean && php bin/magento cache:flush'
+    alias rm='sudo rm -rf pub/static/* generated/*'
+
+    php -d display_errors=1 bin/magento setup:di:compile
+    php -d display_errors=1 bin/magento setup:static-content:deploy -f
+
+    php -d display_errors=1 bin/magento setup:upgrade && php -d display_errors=1 bin/magento setup:di:compile && php -d display_errors=1 bin/magento setup:static-content:deploy -f && php -d display_errors=1 bin/magento indexer:reindex &&  php -d display_errors=1 bin/magento cache:clean && php -d display_errors=1 bin/magento cache:flush 
+
+
+    php bin/magento setup:upgrade && php -d memory_limit=1G bin/magento setup:di:compile && php -d memory_limit=1G bin/magento setup:static-content:deploy -f && php -d memory_limit=1G bin/magento indexer:reindex &&  php bin/magento cache:flush
+
+    php bin/magento setup:upgrade && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex &&  php bin/magento cache:flush
+
+    /opt/rh/rh-php71/root/bin/php -d memory_limit=1G bin/magento s:up
+    /opt/rh/rh-php71/root/bin/php -d memory_limit=1G setup:di:compile
+    /opt/rh/rh-php71/root/bin/php -d memory_limit=1G bin/magento setup:static-content:deploy -f
+    /opt/rh/rh-php71/root/bin/php -d memory_limit=1G bin/magento indexer:reindex
+    /opt/rh/rh-php71/root/bin/php -d memory_limit=1G bin/magento c:c
+    /opt/rh/rh-php71/root/bin/php -d memory_limit=1G bin/magento c:f
+
+    sudo update-alternatives --set php /usr/bin/php7.3
+    
+================ Whitelist schema ===========================
+    php bin/magento setup:db-declaration:generate-whitelist --module-name=Designnbuy_GraphQlDemo
+
+============== update =========================
+
+UPDATE core_config_data SET value = 'https://hierographics.designnbuy.biz/' WHERE path = "web/unsecure/base_url"; 
+UPDATE core_config_data SET value = 'https://hierographics.designnbuy.biz/' WHERE path = "web/secure/base_url"; 
+UPDATE core_config_data SET value = 'https://hierographics.designnbuy.biz/pub/static/' WHERE path = "web/unsecure/base_static_url"; 
+UPDATE core_config_data SET value = 'https://hierographics.designnbuy.biz/pub/static/' WHERE path = "web/secure/base_static_url"; 
+UPDATE core_config_data SET value = 'https://hierographics.designnbuy.biz/pub/media/' WHERE path = "web/unsecure/base_media_url"; 
+UPDATE core_config_data SET value = 'https://hierographics.designnbuy.biz/pub/media/' WHERE path = "web/secure/base_media_url"
+
+UPDATE core_config_data SET value = 'http://127.0.0.1/adam_mike/' WHERE path = "web/unsecure/base_url"; 
+UPDATE core_config_data SET value = 'http://127.0.0.1/adam_mike/' WHERE path = "web/secure/base_url"; 
+UPDATE core_config_data SET value = 'http://127.0.0.1/adam_mike/pub/static/' WHERE path = "web/unsecure/base_static_url"; 
+UPDATE core_config_data SET value = 'http://127.0.0.1/adam_mike/pub/static/' WHERE path = "web/secure/base_static_url"; 
+UPDATE core_config_data SET value = 'http://127.0.0.1/adam_mike/pub/media/' WHERE path = "web/unsecure/base_media_url"; 
+UPDATE core_config_data SET value = 'http://127.0.0.1/adam_mike/pub/media/' WHERE path = "web/secure/base_media_url"
+
+
+bin/magento setup:static-content:deploy en_US fr_FR sk_SK -f
+
+
+http://abdel.designnbuy.biz/,https://abdel.designnbuy.biz/,http://www.abdel.designnbuy.biz/,https://www.abdel.designnbuy.biz/
+
+http://artisticgiftsusa.designnbuy.biz/,https://artisticgiftsusa.designnbuy.biz/,http://www.artisticgiftsusa.designnbuy.biz/,https://www.artisticgiftsusa.designnbuy.biz/
+
+/opt/rh/rh-php73/root/bin/php  bin/magento s:up
+
+
+
+
+==================For live setup===================
+
+php bin/magento deploy:mode:set production --skip-compilation
+
+sash ip = 143.198.181.38
+rm -rf aiod-validation-check.php phpinfo.php
+scp pub/media.zip abdel_hamideh@143.198.181.38:/home/abdel_hamideh/public_html
+
+rm -rf pub/dnb/API/ pub/dnb/comp/ pub/dnb/data/ pub/dnb/extensions/ pub/dnb/html-prototype/ pub/dnb/.babelrc pub/dnb/*.js pub/dnb/.gitignore pub/dnb/README.md pub/dnb/index.html pub/dnb/package-lock.json pub/dnb/package.json pub/dnb/webpack.config.js
+
+https://bestatprinting.designnbuy.biz/,https://www.bestatprinting.designnbuy.biz/,http://bestatprinting.designnbuy.biz/,http://www.bestatprinting.designnbuy.biz/
+
+
+======================== Log print =======================
+
+    $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/order-api-error.log');
+    $logger = new \Zend\Log\Logger();
+    $logger->addWriter($writer);
+    $logger->info($th->getMessage());
+
+
+    $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/custom.log');
+    $logger = new \Zend_Log();
+    $logger->addWriter($writer);
+    $logger->info($log);
+
+================== Find file from all project =================
+
+find . -iname customer-data.js
+grep -rnw '/var/www/vhosts/horecaonline.sk/httpdocs/' -e 'caveat'
+
+grep -rnw '/home/jetrails/captain.findcanary.dev/releases/924c2cb4ec5c5e8db36d0dfb837084fa87b651ab10/app' -e 'mfwebp'
+
+
+
+grep -rnw '/var/www/vhosts/horecaonline.sk/httpdocs/' -e 'caveat' > /var/www/vhosts/horecaonline.sk/httpdocs/LOGTEXT.txt
+
+
+================== Admin User Unlock ==================
+php bin/magento admin:user:unlock admin (admin - username)
+
+================== Reset Password ==================
+
+UPDATE admin_user SET password = CONCAT(SHA2('asdfghjkadmin@123', 256), ':asdfghjk:1') WHERE username = 'admin';
+
+php bin/magento setup:upgrade && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex &&  php bin/magento cache:flush
+
+============== FIND file from terminal =================================
+
+    grep -R "SKU: Descending" * > test28042022.txt
+
+============ Kill port ===================
+
+sudo kill -9 $(sudo lsof -t -i:9001)
+
+=========== Wordpress integrate designo ==============
+
+    sudo chown -R www-data:www-data wordpress1/
+    sudo find . -type f -exec chmod 664 {} \;
+    sudo find . -type f -exec chmod 775 {} \;
+
+    While integrate Desino 
+    make sure these files/folder available
+    
+
+ Class 'Stripe\\Stripe' not found in \/home\/todd_carl\/public_html\/app\/code\/Pmclain\/Stripe\/Model\/Adapter\/StripeAdapter.php:47\nStack trace:\n#0 \/home\/todd_carl\/public_html\/app\/code\/Pmclain\/Stripe\/Model\/Adapter\/StripeAdapter.php(42): Pmclain\\Stripe\\Model\\Adapter\\StripeAdapter->initCredentials()\n#1 \/home\/todd_carl\/public_html\/vendor\/magento\/framework\/ObjectManager\/Factory\/AbstractFactory.php(121): Pmclain\\Stripe\\Model\\Adapter\\StripeAdapter->__construct(Object(Pmclain\\Stripe\\Gateway\\Config\\Config))\n#2 \/home\/todd_carl\/public_html\/vendor\/magento\/framework\/ObjectManager\/Factory\/Dynamic\/Developer.php(66): Magento\\Framework\\ObjectManager\\Factory\\AbstractFactory->createObject('Pmclain\\\\Stripe\\\\...', Array)\n#3 \/home\/todd_carl\/public_html\/vendor\/magento\/framework\/ObjectManager\/ObjectManager.php(70): Magento\\Framework\\ObjectManager\\Factory\\Dynamic\\Developer->create('Pmclain\\\\Stripe\\\\...')\n#4 \/home\/todd_carl\/public_html\/vendor\/magento\/framework\/ObjectManager\/Factory\/AbstractFactory.php(167): Magento\\Framework\\Ob' in '\/home\/todd_carl\/public_html\/app\/code\/Pmclain\/Stripe\/Model\/Adapter\/StripeAdapter.php' on line 47",
+                "trace": "Trace is not available."
+
+
+                app/code/Pmclain/Stripe/Model/Adapter
+
+
+                ssh -i DNB_Rackspace_Pvt.pem adam_middleton@146.20.78.92 -p 2281
+
+                ssh -i serverkeynew_jace.ppk captai_giuY5@69.27.41.206 -p 2223
+
+                ssh -i serverkeynew_jace.ppk captai_giuY5@69.27.41.206 -p 2223
+
+
+php bin/magento admin:user:create --admin-user=test --admin-password=test@123 --admin-email=test@gmail.com --admin-firstname=Test --admin-lastname=Test
+
+
+sudo gedit /etc/php/7.4/mods-available/xdebug.ini
+
+
+
+============================ MISS used ==========================================================================
+
+https://projects.zoho.com/portal/designnbuyw2p#taskdetail/522340000007066005/522340000018684037/522340000018750235
+
+
+https://www.pluginhive.com/knowledge-base/how-to-get-dhl-account-number/#:~:text=Step%201%3A%20Visit%20DHL%20website,create%20an%20account%20for%20you.
+
+
+========================= ZIP/UNZIP ===========================================================================
+zip -r dnb_BKP09082022.zip dnb/
+unzip Designnbuy.zip
+
+============================= SQL import ==============================================================
+mysql -u niraj_modak -p
+---then select databse where you want to import table;
+SET autocommit=0; source /home/niraj_modak/public_html/dnb794-06092022.sql;
+
+
+=================================================================================================================
+
+0 * * * * cd /home/ahmed_alali/public_html  && /usr/bin/php  /home/ahmed_alali/public_html/bin/magento indexer:reindex
+
+
+

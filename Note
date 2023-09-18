@@ -1,0 +1,86 @@
+========== Permission Command ===================
+    sudo chmod -R 777 var/ pub/ generated/ 
+
+=============== Elasticsearch =====================
+    sudo systemctl start elasticsearch.service
+    sudo systemctl stop elasticsearch.service
+    sudo systemctl status elasticsearch.service
+
+    sudo service elasticsearch start
+    sudo service elasticsearch stop
+    sudo service elasticsearch restart
+
+
+=============== Install magento 2.4 =====================
+    php -dmemory_limit=1G bin/magento setup:install --base-url=http://128.1.0.1/CE/243/ 
+    --db-host=128.1.0.1 
+    --db-name=ce243 
+    --db-user=root 
+    --db-password=rws 
+    --admin-firstname=vivek 
+    --admin-lastname=kumar 
+    --admin-email=vivekanand.kumar@designnbuy.com 
+    --admin-user=admin 
+    --admin-password=admin123 
+    --language=en_US 
+    --currency=USD 
+    --timezone=America/Chicago 
+    --use-rewrites=1 
+    --search-engine=elasticsearch7 
+    --elasticsearch-host=localhost 
+    --elasticsearch-port=9200
+
+===================== Command Line ==================================
+
+    php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex &&  php bin/magento cache:flush
+
+================ Set mode of project =====================
+    php bin/magento deploy:mode:set developer
+
+=============== Alis set =============================
+
+    alias cc='php bin/magento cache:clean'
+    alias cf='php bin/magento cache:flush'
+    alias su='php bin/magento setup:upgrade'
+    alias sdc='php bin/magento setup:di:compile'
+    alias sscd='php bin/magento setup:static-content:deploy -f'
+    alias ir='php bin/magento indexer:reindex'
+    alias pp='sudo chmod -R 777 var/ pub/ generated/'
+    alias g='sudo rm -rf pub/static/* generated/* && php bin/magento cache:flush && sudo chmod -R 777 var/ pub/ generated/'
+    alias all='php bin/magento setup:upgrade && php bin/magento setup:di:compile && php bin/magento setup:static-content:deploy -f && php bin/magento indexer:reindex &&  php bin/magento cache:flush'
+    alias rm='sudo rm -rf pub/static/* generated/*'
+
+================ Whitelist schema ===========================
+    php bin/magento setup:db-declaration:generate-whitelist --module-name=YourModule_Name
+
+====================== php lisr ==================
+    sudo update-alternatives --list php
+    sudo a2dismod php5.6
+    sudo a2enmod php7.1
+    sudo service apache2 restart
+    sudo update-alternatives --set php /usr/bin/php7.4
+    sudo update-alternatives --set phar /usr/bin/phar7.4
+    sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.4
+
+sudo a2dismod php7.4 && sudo a2dismod php8.2 && sudo a2enmod php8.1 && service apache2 restart && sudo update-alternatives --set php /usr/bin/php8.1
+
+=============== elasctic serach =============
+    sudo systemctl daemon-reload
+    sudo systemctl enable elasticsearch.service
+    sudo systemctl start elasticsearch.service
+    sudo systemctl start elasticsearch
+    sudo systemctl status elasticsearch
+    journalctl -xe 
+
+============= Change elasticsearch alocate memory ==============
+    sudo vim /etc/elasticsearch/jvm.options
+
+    php bin/magento setup:patch --patch=Vendor\Module\Setup\Patch\Data\AddCustomProduct
+
+    
+
+
+
+
+
+
