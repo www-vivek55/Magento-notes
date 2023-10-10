@@ -44,6 +44,7 @@
        - sudo apt install composer
        - composer require mailchimp/mc-magento2:2.3.4
        - composer self-update 1.10.17
+         composer self-update 2.2.21
        - composer self-update --rollback
 
 
